@@ -21,7 +21,9 @@ def webhook(request):
 
     elif request.method == "POST":
         payload = json.loads(request.body)
-        print(payload)
+
+        print("WEBHOOK RECEIVED")
+        print(json.dumps(payload, indent=2))
 
         return JsonResponse({"status": "ok"})
 
