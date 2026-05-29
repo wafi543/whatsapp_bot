@@ -3,3 +3,4 @@ gunicorn
 requests
 whitenoise
 psycopg[binary]
+python-dotenv
