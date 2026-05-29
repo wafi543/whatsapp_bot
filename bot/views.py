@@ -1,10 +1,10 @@
 import json
 import os
 
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-VERIFY_TOKEN = os.getenv("WEBHOOK_VERIFY_TOKEN", "your-token")
+VERIFY_TOKEN = os.getenv("WEBHOOK_VERIFY_TOKEN")
 
 
 @csrf_exempt
@@ -14,14 +14,15 @@ def webhook(request):
         token = request.GET.get("hub.verify_token")
         challenge = request.GET.get("hub.challenge")
 
-        if token == VERIFY_TOKEN:
-            return JsonResponse(challenge, safe=False)
+        if token and token == VERIFY_TOKEN:
+            return HttpResponse(challenge)
 
-        return JsonResponse({"error": "invalid token"}, status=403)
+        return HttpResponse("Forbidden", status=403)
 
-    if request.method == "POST":
+    elif request.method == "POST":
         payload = json.loads(request.body)
-
         print(payload)
 
         return JsonResponse({"status": "ok"})
+
+    return HttpResponse("Method not allowed", status=405)
