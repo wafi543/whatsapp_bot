@@ -1,0 +1,28 @@
+{
+    "messaging_product": "whatsapp",
+    "type": "interactive",
+    "interactive": {
+        "type": "list",
+        "body": {
+            "text": "اختر الخدمة الأخرى المطلوبة"
+        },
+        "action": {
+            "button": "عرض الخدمات",
+            "sections": [
+                {
+                    "title": "خدمات أخرى",
+                    "rows": [
+                        {
+                            "id": "survey",
+                            "title": "رفع مساحي"
+                        },
+                        {
+                            "id": "licensing",
+                            "title": "استخراج رخص"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

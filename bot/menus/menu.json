@@ -1,0 +1,36 @@
+{
+    "messaging_product": "whatsapp",
+    "type": "interactive",
+    "interactive": {
+        "type": "list",
+        "body": {
+            "text": "اختر الخدمة المطلوبة"
+        },
+        "action": {
+            "button": "عرض الخدمات",
+            "sections": [
+                {
+                    "title": "الخدمات الرئيسية",
+                    "rows": [
+                        {
+                            "id": "consultation",
+                            "title": "استشارة هندسية مجانية"
+                        },
+                        {
+                            "id": "design",
+                            "title": "تصميم مخططات هندسية"
+                        },
+                        {
+                            "id": "supervision",
+                            "title": "إشراف هندسي"
+                        },
+                        {
+                            "id": "other_services",
+                            "title": "خدمات أخرى"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
